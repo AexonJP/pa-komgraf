@@ -46,9 +46,9 @@ class chara{
       
       if(ground){
         this.y -=300;
-        ground = false;
       }
     }
+    ground = false;
   }
   //void lari(){
   //  if(!lompat){
@@ -65,11 +65,11 @@ class platform{
   platform(float x1, float y1, float x2, float y2){
     this.x1 = x1;
     this.y1 = y1;
-    this.x2 = x2;
+    this.x2 = x2 +x1;
     this.y2 = y2 + y1;
   }
   void bentuk(){
-    rect(x1,y1,x2,y2-y1);
+    rect(x1,y1,x2-x1,y2-y1);
   }
 }
 

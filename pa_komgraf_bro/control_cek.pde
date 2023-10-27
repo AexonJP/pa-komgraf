@@ -27,6 +27,9 @@ void animasi(){
           //i.collisionKanan = true;
         }
       }
+      else if(!i.ground){
+        i.y+=5;
+      }
       //else if(
     }
   }
