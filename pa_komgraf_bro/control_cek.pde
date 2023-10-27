@@ -19,20 +19,30 @@ void animasi(){
   for(chara i : player){
     for(platform is : plat){
       if(i.x+i.lebar > is.x1 && i.x < is.x2){
-        if(i.y+(i.panjang) < is.y1 || i.y > is.y2){
-          i.y+=5;
+        if(i.y+(i.panjang) < is.y1){
+          //i.y+=5;
+          i.ground = false;
+        }
+        else if(i.y > is.y2){
+          i.ground = false;
         }
         else{
           i.ground = true;
-          //i.collisionKanan = true;
+          i.collisionKanan = true;
         }
       }
-      else if(!i.ground){
-        i.y+=5;
-      }
+      //else if(i.y > is.y1 && i.y < is.y2){
+      //  i.collisionKanan = true;
+      //}
+      //else if (){
+        
       //else if(
     }
   }
+  
+  
+  x.hitbox();
+  x.cekGerak();
 }
 
 
