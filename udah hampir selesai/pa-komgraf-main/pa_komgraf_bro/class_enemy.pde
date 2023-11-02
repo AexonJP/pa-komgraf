@@ -10,16 +10,24 @@ class enemy{
   boolean kanan = false;
   int panjang =40;
   int lebar =20;
-  enemy(float x, float y, float x1, float y1, float x2, float y2){
-    this.x=x;
-    this.y=y;
-    this.x1=x1;
-    this.y1=y1;
+  boolean hit = false;
+  enemy(float x, float y, float x2, float y2){
+    this.x=x+random(x2-x1);
+    this.y=y-panjang;
+    this.x1=x;
+    this.y1=y;
     this.x2 = x2;
     this.y2 = y2;
   }
   void hitbox(){
+    if(hit){
+      fill(255,0,0);
+      
+    }
     rect(x,y,lebar,panjang);
+    noFill();
+    hit = false;
+    
   }
   void cekGerak(){
     if(kiri){

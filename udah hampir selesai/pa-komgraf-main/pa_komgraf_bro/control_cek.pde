@@ -95,10 +95,23 @@ void animasi(){
   }
   
   
-  
-  for(enemy i : monster){
-    
-    i.hitbox();
-    i.cekGerak();
+  for(chara i : player){
+    for(enemy is : monster){
+      if (i.x+i.lebar +i.kecepatan >= is.x && i.x -i.kecepatan <= is.x+is.lebar){
+        if(!(i.y+i.panjang - i.gravitasi  < is.y) && !(i.y - i.gravitasi  > is.y+i.lebar)){
+          if(i.y < is.y){
+            i.lompat =true;
+            i.gravitasi =5;
+          }
+          is.hit =true;
+          if(i.lompat && is.hit){
+            //monster.remove(indexOf(is));
+          }
+        }
+      }
+          
+      is.hitbox();
+      is.cekGerak();
+    }
   }
 }

@@ -10,7 +10,8 @@ chara mario = new chara(50,0);
 chara mario2 = new chara(150,0);
 platform kotak1 = new platform(0,670,800,60);
 platform kotak2 = new platform(900,600,1200,60);
-enemy monster1 = new enemy(kotak1.x1+50, kotak1.y1-40, kotak1.x1, kotak1.y1, kotak1.x2, 0);
+enemy monster1 = new enemy(kotak1.x1, kotak1.y1, kotak1.x2, 0);
+enemy monster2 = new enemy(kotak2.x1, kotak2.y1, kotak2.x2,0);
 
 
 ArrayList<chara> player = new ArrayList<chara>();
@@ -25,6 +26,7 @@ void setup(){
   player.add(mario);
   //player.add(mario2);
   monster.add(monster1);
+  monster.add(monster2);
   plat.add(kotak1);
   plat.add(kotak2);
 }
