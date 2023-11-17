@@ -30,7 +30,7 @@ void menu(){
   if(mouseX >= width/2-130 && mouseY >= height/2+100-32 && mouseX <= width/2-130+265 && mouseY <= height/2+100-32+40){
     line(width/2-130,height/2+100+5,  width/2-130+265, height/2+100+5);
     if(mousePressed){
-      //halaman =2;
+      halaman =2;
     }
   }
   if(mouseX >= width/2-130 && mouseY >= height/2+200-32 && mouseX <= width/2-130+265 && mouseY <= height/2+200-32+40){

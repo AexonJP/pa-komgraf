@@ -26,6 +26,7 @@ boolean tembak = false;
 
 PImage imgs;
 PImage bgMenu;
+PImage howToPlay;
 
 //untuk gerakkan awan
 float geraks=0;
@@ -73,6 +74,7 @@ int mousesy2=0;
 void setup(){
   musik.add(new SoundFile(this, "sound/music/Teller_of_the_Tales.mp3"));
   musik.add(new SoundFile(this, "sound/music/winding_paths.mp3"));
+  musik.add(new SoundFile(this, "sound/music/Erothyme_Pinpoint_Sol_in_Erothyme_Pinpoint_Sol.mp3"));
   slime_die = new SoundFile(this, "sound/slime/slime_die2.wav");
   koin = new SoundFile(this, "sound/koin/koin.wav");
   
@@ -95,6 +97,7 @@ void setup(){
   //player.add(mario2);
   imgs  = loadImage("sprite/background/pemandangan1.png");
   bgMenu = loadImage("sprite/background/pemandangan11.png");
+  howToPlay = loadImage("asset/how_to_play.png");
   
   
   
@@ -142,10 +145,25 @@ void draw(){
       rect(mousesx, mousesy,mouseX-mousesx, mouseY-mousesy);
     }
   }
+  else if (halaman ==2){
+    image(howToPlay,0,0,width,height);
+    textSize(40);
+    textAlign(CENTER);
+    text("Back",width-100, height-60);
+    if(mouseX >= width-100-130 && mouseY >= height-100 && mouseX <= width-100-130+265 && mouseY <= height-100+40){
+      line(width-100-130,height-55,  width-100-130+265, height-55);
+      if(mousePressed){
+        halaman =0;
+      }
+    }
+    textAlign(LEFT);
+    textSize(15);
+  }
   
   
   matikanMusik(musik.get(halaman));
   if(!musik.get(halaman).isPlaying()){
+    if(halaman ==2)musik.get(halaman).amp(1.2);
     musik.get(halaman).play();
   }
   
